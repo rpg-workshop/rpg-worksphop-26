@@ -1,0 +1,57 @@
+title: "RPG: Roles of Planning in Games"
+subtitle: "An Interactive Workshop on AI, Planning, and Game Design"
+deadline: "August 1st, 2026"
+
+game:
+  hero_name: "Researcher"
+  boss_name: "Reviewer 2"
+  hero_hp: 100
+  boss_hp: 120
+  attacks:
+    - name: "A* Search"
+      damage: 20
+      msg: "You found the optimal path to a valid counter-argument!"
+    - name: "GOAP Strategy"
+      damage: 30
+      msg: "You formulated a plan to satisfy all preconditions!"
+    - name: "MCTS Rollout"
+      damage: 25
+      msg: "You simulated 10,000 possible rebuttals. Solid hit!"
+    - name: "Cite Their Paper"
+      damage: 50
+      msg: "It's super effective! Reviewer 2 is highly flattered."
+  boss_attacks:
+    - name: "Nitpick"
+      damage: 15
+      msg: "Reviewer 2 found a minor typo on page 7!"
+    - name: "Missing Baseline"
+      damage: 25
+      msg: "Reviewer 2 demands a comparison to an obscure 1993 paper!"
+    - name: "Vague Feedback"
+      damage: 20
+      msg: "'The novelty is limited.' It hurts your motivation!"
+
+sections:
+  - id: "about"
+    title: "About the Workshop"
+    content: |
+      <p>Welcome to <strong>RPG</strong>! This workshop explores the intersection of automated planning, artificial intelligence, and interactive entertainment. We aim to bring together researchers and practitioners to discuss the future of AI in games.</p>
+
+  - id: "schedule"
+    title: "Workshop Schedule"
+    content: |
+      <ul>
+        <li><strong>09:00 AM:</strong> Opening Remarks</li>
+        <li><strong>09:30 AM:</strong> Keynote: The Future of Goal-Oriented Action Planning</li>
+        <li><strong>11:00 AM:</strong> Paper Presentations</li>
+      </ul>
+
+  - id: "cfp"
+    title: "Call for Papers"
+    content: |
+      <p>We invite submissions on topics including but not limited to:</p>
+      <ul>
+        <li>Narrative Generation</li>
+        <li>NPC Behavior and GOAP</li>
+        <li>Procedural Content Generation</li>
+      </ul>
