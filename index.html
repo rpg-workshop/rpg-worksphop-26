@@ -5,468 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPG Workshop</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #e74c3c;
-            --bg: #f9f9f9;
-            --text: #333;
-            --rpg-ui: #2b2b2b;
-        }
-
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        /* JRPG Banner Styles */
-        #banner-container {
-            width: 100%;
-            height: 400px;
-            background: #e0f7fa;
-            position: relative;
-            border-bottom: 4px solid var(--primary);
-            display: flex;
-            flex-direction: column;
-        }
-
-        #battle-scene {
-            flex-grow: 1;
-            position: relative;
-            background: linear-gradient(to bottom, #87CEEB 0%, #E0F6FF 60%, #8FBC8F 60%, #2E8B57 100%);
-        }
-
-        /* Sprites and Health Bars */
-        .sprite {
-            position: absolute;
-            font-size: 5rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            transition: transform 0.1s;
-        }
-
-        #hero-sprite {
-            bottom: 20px;
-            left: 10%;
-            transform: scaleX(-1);
-        }
-
-        /* Flipped to face right */
-        #boss-sprite {
-            top: 30px;
-            right: 10%;
-            font-size: 7rem;
-        }
-
-        .hud {
-            position: absolute;
-            background: white;
-            border: 3px solid #333;
-            border-radius: 5px;
-            padding: 10px;
-            width: 200px;
-            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
-        }
-
-        #boss-hud {
-            top: 20px;
-            left: 20px;
-        }
-
-        #hero-hud {
-            bottom: 20px;
-            right: 20px;
-        }
-
-        .hud h3 {
-            margin: 0 0 5px 0;
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        .hp-bar-bg {
-            width: 100%;
-            height: 10px;
-            background: #ccc;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .hp-bar-fill {
-            height: 100%;
-            background: #2ecc71;
-            width: 100%;
-            transition: width 0.3s, background-color 0.3s;
-        }
-
-        /* RPG UI Panel */
-        #rpg-ui {
-            height: 120px;
-            background: var(--rpg-ui);
-            border-top: 4px solid white;
-            display: flex;
-            color: white;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.1rem;
-        }
-
-        #dialogue-box {
-            flex: 2;
-            padding: 15px;
-            border-right: 4px solid white;
-            box-sizing: border-box;
-        }
-
-        #action-menu {
-            flex: 1;
-            padding: 10px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            box-sizing: border-box;
-        }
-
-        .action-btn {
-            background: transparent;
-            color: white;
-            border: 2px solid transparent;
-            font-family: inherit;
-            font-size: 1rem;
-            text-align: left;
-            cursor: pointer;
-            padding: 5px;
-            border-radius: 4px;
-            transition: 0.2s;
-        }
-
-        .action-btn:hover:not(:disabled) {
-            border-color: white;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .action-btn:disabled {
-            color: #666;
-            cursor: not-allowed;
-        }
-
-        /* Page Layout Styles */
-        nav {
-            background: var(--primary);
-            padding: 1rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            color: var(--secondary);
-        }
-
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        section {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        section h2 {
-            color: var(--secondary);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-
-        .deadline-highlight {
-            background: #fff3cd;
-            color: #856404;
-            padding: 10px;
-            border-left: 4px solid #ffeeba;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Simple Animations */
-        @keyframes shake {
-            0% {
-                transform: translate(1px, 1px) rotate(0deg);
-            }
-
-            10% {
-                transform: translate(-1px, -2px) rotate(-1deg);
-            }
-
-            20% {
-                transform: translate(-3px, 0px) rotate(1deg);
-            }
-
-            30% {
-                transform: translate(3px, 2px) rotate(0deg);
-            }
-
-            40% {
-                transform: translate(1px, -1px) rotate(1deg);
-            }
-
-            50% {
-                transform: translate(-1px, 2px) rotate(-1deg);
-            }
-
-            60% {
-                transform: translate(-3px, 1px) rotate(0deg);
-            }
-
-            70% {
-                transform: translate(3px, 1px) rotate(-1deg);
-            }
-
-            80% {
-                transform: translate(-1px, -1px) rotate(1deg);
-            }
-
-            90% {
-                transform: translate(1px, 2px) rotate(0deg);
-            }
-
-            100% {
-                transform: translate(1px, -2px) rotate(-1deg);
-            }
-        }
-
-        .shake {
-            animation: shake 0.5s;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+    <!-- Workshop Title Banner -->
+    <div id="workshop-banner">
+        <div class="banner-title" id="banner-title">RPG Workshop</div>
+    </div>
+
+    <!-- Battle Scene -->
     <div id="banner-container">
         <div id="battle-scene">
-            <div id="boss-hud" class="hud">
-                <h3 id="ui-boss-name">Reviewer 2</h3>
-                <div class="hp-bar-bg">
-                    <div id="boss-hp-fill" class="hp-bar-fill"></div>
-                </div>
-            </div>
-            <div id="boss-sprite" class="sprite">👹</div>
-
             <div id="hero-hud" class="hud">
                 <h3 id="ui-hero-name">Researcher</h3>
-                <div class="hp-bar-bg">
-                    <div id="hero-hp-fill" class="hp-bar-fill"></div>
-                </div>
+                <div class="hp-label">HP</div>
+                <div class="hp-bar-bg"><div id="hero-hp-fill" class="hp-bar-fill"></div></div>
             </div>
             <div id="hero-sprite" class="sprite">🧑‍💻</div>
+
+            <div id="boss-hud" class="hud">
+                <h3 id="ui-boss-name">Reviewer 2</h3>
+                <div class="hp-label">HP</div>
+                <div class="hp-bar-bg"><div id="boss-hp-fill" class="hp-bar-fill"></div></div>
+            </div>
+            <div id="boss-sprite" class="sprite">👹</div>
         </div>
 
         <div id="rpg-ui">
-            <div id="dialogue-box">A wild REVIEWER 2 appeared!</div>
-            <div id="action-menu">
-            </div>
+            <div id="dialogue-box"><span id="dialogue-text">A wild REVIEWER 2 appeared!</span><span id="dialogue-cursor">▮</span></div>
+            <div id="action-menu"></div>
         </div>
     </div>
 
-    <nav id="navbar"></nav>
+    <nav id="navbar" style="position:relative;">
+        <button id="theme-toggle" onclick="toggleTheme()">🌙 DARK</button>
+    </nav>
 
-    <main id="content-container">
-    </main>
+    <main id="content-container"></main>
 
     <footer>&copy; <span id="year"></span> RPG Workshop Organizing Committee</footer>
 
-    <script>
-        let gameData = {};
-        let currentHeroHp = 0;
-        let currentBossHp = 0;
-        let isPlayerTurn = true;
-        let gameOver = false;
-        let deadline = "";
-
-        // --- 1. Load YAML Configuration ---
-        async function loadConfig() {
-            try {
-                const response = await fetch('config.yaml');
-                const yamlText = await response.text();
-                const config = jsyaml.load(yamlText);
-                buildPage(config);
-                initGame(config);
-            } catch (e) {
-                console.error("Error loading config.yaml:", e);
-                document.getElementById('dialogue-box').innerText = "System Error: Could not load YAML config.";
-            }
-        }
-
-        // --- 2. Build the Page Content ---
-        function buildPage(config) {
-            document.title = config.title;
-            deadline = config.deadline;
-            document.getElementById('year').innerText = new Date().getFullYear();
-
-            const navbar = document.getElementById('navbar');
-            const contentContainer = document.getElementById('content-container');
-
-            // Add Deadline Banner
-            const deadlineDiv = document.createElement('div');
-            deadlineDiv.className = 'deadline-highlight';
-            deadlineDiv.innerText = `🚨 Call for Papers Deadline: ${config.deadline}`;
-            contentContainer.appendChild(deadlineDiv);
-
-            // Generate Sections
-            config.sections.forEach(sec => {
-                const link = document.createElement('a');
-                link.href = `#${sec.id}`;
-                link.innerText = sec.title;
-                navbar.appendChild(link);
-
-                const sectionDiv = document.createElement('section');
-                sectionDiv.id = sec.id;
-                sectionDiv.innerHTML = `<h2>${sec.title}</h2><div>${sec.content}</div>`;
-                contentContainer.appendChild(sectionDiv);
-            });
-        }
-
-        // --- 3. JRPG Battle Logic ---
-        function initGame(config) {
-            gameData = config.game;
-            currentHeroHp = gameData.hero_hp;
-            currentBossHp = gameData.boss_hp;
-
-            // Setup UI Names
-            document.getElementById('ui-hero-name').innerText = gameData.hero_name;
-            document.getElementById('ui-boss-name').innerText = gameData.boss_name;
-
-            const actionMenu = document.getElementById('action-menu');
-
-            // Generate Attack Buttons
-            gameData.attacks.forEach((attack, index) => {
-                const btn = document.createElement('button');
-                btn.className = 'action-btn';
-                btn.innerText = `> ${attack.name}`;
-                btn.onclick = () => playerAttack(index);
-                actionMenu.appendChild(btn);
-            });
-
-            updateHealthBars();
-        }
-
-        function setDialogue(text) {
-            document.getElementById('dialogue-box').innerText = text;
-        }
-
-        function toggleButtons(disabled) {
-            const buttons = document.querySelectorAll('.action-btn');
-            buttons.forEach(btn => btn.disabled = disabled);
-        }
-
-        function updateHealthBars() {
-            const heroPercent = Math.max(0, (currentHeroHp / gameData.hero_hp) * 100);
-            const bossPercent = Math.max(0, (currentBossHp / gameData.boss_hp) * 100);
-
-            const heroFill = document.getElementById('hero-hp-fill');
-            const bossFill = document.getElementById('boss-hp-fill');
-
-            heroFill.style.width = `${heroPercent}%`;
-            bossFill.style.width = `${bossPercent}%`;
-
-            // Change color to red if low health
-            heroFill.style.backgroundColor = heroPercent < 30 ? '#e74c3c' : '#2ecc71';
-            bossFill.style.backgroundColor = bossPercent < 30 ? '#e74c3c' : '#2ecc71';
-        }
-
-        function triggerShake(elementId) {
-            const el = document.getElementById(elementId);
-            el.classList.remove('shake');
-            void el.offsetWidth; // trigger reflow
-            el.classList.add('shake');
-        }
-
-        function playerAttack(attackIndex) {
-            if (!isPlayerTurn || gameOver) return;
-            isPlayerTurn = false;
-            toggleButtons(true);
-
-            const attack = gameData.attacks[attackIndex];
-            setDialogue(`${gameData.hero_name} used ${attack.name}! ${attack.msg}`);
-
-            currentBossHp -= attack.damage;
-            triggerShake('boss-sprite');
-            updateHealthBars();
-
-            if (currentBossHp <= 0) {
-                setTimeout(winGame, 1500);
-            } else {
-                setTimeout(bossTurn, 2000);
-            }
-        }
-
-        function bossTurn() {
-            if (gameOver) return;
-
-            // Pick a random boss attack
-            const randomAttack = gameData.boss_attacks[Math.floor(Math.random() * gameData.boss_attacks.length)];
-
-            setDialogue(`${gameData.boss_name} used ${randomAttack.name}! ${randomAttack.msg}`);
-
-            currentHeroHp -= randomAttack.damage;
-            triggerShake('hero-sprite');
-            updateHealthBars();
-
-            if (currentHeroHp <= 0) {
-                setTimeout(loseGame, 1500);
-            } else {
-                setTimeout(() => {
-                    setDialogue(`What will ${gameData.hero_name} do?`);
-                    isPlayerTurn = true;
-                    toggleButtons(false);
-                }, 2000);
-            }
-        }
-
-        function winGame() {
-            gameOver = true;
-            document.getElementById('boss-sprite').style.opacity = '0';
-            document.getElementById('boss-sprite').style.transition = 'opacity 1s';
-            setDialogue(`Reviewer 2 was defeated! PAPER ACCEPTED! Don't forget to submit by ${deadline}!`);
-        }
-
-        function loseGame() {
-            gameOver = true;
-            document.getElementById('hero-sprite').style.opacity = '0';
-            document.getElementById('hero-sprite').style.transition = 'opacity 1s';
-            setDialogue(`DESK REJECT! Refresh the page to write a new manuscript...`);
-        }
-
-        // Boot up
-        loadConfig();
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
