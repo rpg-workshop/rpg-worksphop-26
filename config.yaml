@@ -1,6 +1,46 @@
 title: "RPG 26: Roles of Planning in Games"
 deadline: "August 1st, 2026"
 
+important_dates:
+  - label: "Paper Submission Deadline"
+    date: "August 1st, 2026"
+    highlight: true
+  - label: "Author Notification"
+    date: "September 1st, 2026"
+  - label: "Camera-Ready Deadline"
+    date: "September 15th, 2026"
+
+organizers:
+  - name: "Richard G. Freedman"
+    affiliation: "SIFT"
+    role: "Primary Contact"
+    bio: "AI planning researcher at Smart Information Flow Technologies (SIFT). Works on adaptive characters and pedagogical experience management in educational videogames promoting literacy and workforce training. Previously co-organized the User Interfaces for Scheduling and Planning (UISP) Workshop at ICAPS."
+    photo: ""
+  - name: "Emanuele De Pellegrin"
+    affiliation: "University of Edinburgh"
+    role: "Research Associate"
+    bio: "Research Associate at the Centre for AI in Assistive Autonomy, University of Edinburgh. Works on Assistive Driving and planning in shared autonomy systems that combine human intent with safe AI control. Creator of PDSim: Planning Domain Simulation, a Unity3D plugin to test plan execution or create game behaviours."
+    photo: ""
+  - name: "Lorenzo James"
+    affiliation: "IÉSEG Business School"
+    role: "Assistant Professor"
+    bio: "Assistant Professor of Information Systems at IÉSEG Business School. Research focuses on integrating persuasive design into entertainment-based games to promote sustained engagement with health behaviors. Developer of the Automated Planning of Level Structure system, which aids healthcare personnel in designing balanced, health-promoting digital interventions."
+    photo: ""
+  - name: "Pavan Kantharaju"
+    affiliation: "SIFT"
+    role: "Researcher"
+    bio: "Researcher at SIFT specialising in neural and symbolic representation learning and its application to planning, plan and goal recognition, and computer games. Developed a game-playing agent for the RTS game μRTS using adversarial hierarchical planning, which competed in the 2018 IEEE Computational Intelligence in Games competition."
+    photo: ""
+  - name: "Myriam Kapon"
+    affiliation: "University of Macedonia"
+    role: "Master's Student"
+    bio: "Master's student in Artificial Intelligence and Data Analytics at the University of Macedonia. Research focuses on bridging classical AI planning and game development; currently implementing a GOAP framework with lifted actions in Unity3D. Also works as an educator in game development for young learners."
+    photo: ""
+
+program_committee:
+  - { name: "Jhon Doe",             affiliation: "University of Smth" }
+  
+
 game:
   hero_name: "Researcher"
   boss_name: "Reviewer 2"
@@ -10,12 +50,12 @@ game:
     - name: "A* Search"
       damage: 20
       msg: "You found the optimal path to a valid counter-argument!"
-    - name: "GOAP Strategy"
+    - name: "While we appreciate this suggestion..."
       damage: 30
-      msg: "You formulated a plan to satisfy all preconditions!"
-    - name: "MCTS Rollout"
-      damage: 25
-      msg: "You simulated 10,000 possible rebuttals. Solid hit!"
+      msg: "We both agree you DON'T appreciate the suggestion."
+    - name: "See Page 5"
+      damage: 10
+      msg: "It's not very effective..."
     - name: "Cite Their Paper"
       damage: 50
       msg: "It's super effective! Reviewer 2 is highly flattered."
@@ -24,33 +64,100 @@ game:
       damage: 15
       msg: "Reviewer 2 found a minor typo on page 7!"
     - name: "Missing Baseline"
-      damage: 25
+      damage: 20
       msg: "Reviewer 2 demands a comparison to an obscure 1993 paper!"
     - name: "Vague Feedback"
       damage: 20
-      msg: "'The novelty is limited.' It hurts your motivation!"
+      msg: "'The novelty is limited.' Emotional Damage!"
+    - name: "This is not the right venue!"
+      damage: 30
+      msg: "It's super effective! You start questioning your life choices..."
 
 sections:
   - id: "about"
     title: "About the Workshop"
     content: |
-      <p>Welcome to <strong>RPG</strong>! This workshop explores the intersection of automated planning, artificial intelligence, and interactive entertainment. We aim to bring together researchers and practitioners to discuss the future of AI in games.</p>
+      <p>Games and virtual environments have long served as test beds for Artificial Intelligence (AI),
+      providing research challenges and benchmarks for assessment of intelligent systems performance.
+      The specific application of Automated Planning and Scheduling (APS) technologies in games
+      has been gaining popularity for uses both within the gameplay experience and for designing them.</p>
+      <p>The <strong>Roles of Planning in Games (RPG)</strong> workshop aims to bring together researchers
+      and practitioners to explore the unique challenges and contributions that rise from applying APS
+      techniques to games. The focus is specifically on the aspects that directly interest the ICAPS
+      community such as reasoning, resource management, hierarchical goal decomposition, and search-based
+      methods. The focus on games will also encourage designers and developers to present their needs,
+      wants, and challenges to the ICAPS community while having an opportunity to learn more about the
+      APS resources available to them.</p>
 
-  - id: "schedule"
-    title: "Workshop Schedule"
-    content: |
-      <ul>
-        <li><strong>09:00 AM:</strong> Opening Remarks</li>
-        <li><strong>09:30 AM:</strong> Keynote: The Future of Goal-Oriented Action Planning</li>
-        <li><strong>11:00 AM:</strong> Paper Presentations</li>
-      </ul>
+  - id: "dates"
+    title: "Important Dates"
+    type: "important_dates"
 
   - id: "cfp"
     title: "Call for Papers"
     content: |
-      <p>We invite submissions on topics including but not limited to:</p>
+      <p>We invite submissions on all aspects of Automated Planning and Scheduling (APS) as applied
+      to games — including video games, tabletop games, serious games, and game-inspired benchmarks.
+      We welcome both theoretical contributions and applied systems.</p>
+      <p>The workshop will feature a <strong>Standard Track</strong> of peer-reviewed technical papers
+      (short and long) with 8–10 presentations, one or two <strong>Invited Speaker</strong> sessions
+      (60 minutes each), and an <strong>Industry Panel</strong> on the "Reality Gap" between academic
+      planning and shipping commercial titles.</p>
+      <p>We utilize a <strong>double-blind review process</strong> to minimize bias regarding author
+      identity or affiliation. Our organizing committee includes people from the U.S., U.K., France,
+      and Greece with a mix of academic researchers and industry practitioners.</p>
+
+  - id: "topics"
+    title: "Topics of Interest"
+    content: |
+      <p>Topics include, but are not limited to:</p>
       <ul>
-        <li>Narrative Generation</li>
-        <li>NPC Behavior and GOAP</li>
-        <li>Procedural Content Generation</li>
+        <li><strong>Decision Making in Games:</strong> Domain-specific heuristics, knowledge
+        representation, search methods, and planners for playing and understanding existing games.</li>
+        <li><strong>Real-Time Planning:</strong> Techniques for interleaving planning and execution
+        under strict time and memory constraints.</li>
+        <li><strong>Planning for Quality Assurance:</strong> Using automated planners to generate
+        test coverage, detect soft-locks, and validate playable content autonomously.</li>
+        <li><strong>Neurosymbolic AI in Games:</strong> Combining neuro-inspired models with symbolic
+        planning to create NPCs that are both conversational and goal-directed.</li>
+        <li><strong>Hierarchical Planning:</strong> Advances in hierarchical task networks (HTNs)
+        tailored for controlling agent behaviors or developing structured game content.</li>
+        <li><strong>Plan, Activity, and Goal Recognition:</strong> Inferring player intent to adapt
+        game difficulty or content dynamically.</li>
+        <li><strong>Procedural Content Generation:</strong> Constraint-based planning for generating
+        game content such as solvable levels, puzzles, and narratives.</li>
+        <li><strong>Planning for Game Design:</strong> Applications of APS to game or level design
+        for videogames and/or tabletop games.</li>
       </ul>
+
+  - id: "submission"
+    title: "Submission Instructions"
+    content: |
+      <p>Submit papers via <strong>EasyChair</strong> using the <strong>ICAPS 2026 paper template</strong>.</p>
+      <ul>
+        <li>Regular papers: up to <strong>8 pages</strong> + unlimited references</li>
+        <li>Short / position papers: up to <strong>4 pages</strong> + unlimited references</li>
+        <li>All submissions must be in <strong>PDF format</strong></li>
+        <li>Reviewing is <strong>double-blind</strong> — please anonymize your submission</li>
+      </ul>
+      <p>At least one author of each accepted paper must register for the ICAPS 2026 workshop day.
+      Accepted papers will be made available on the workshop website. The workshop does not publish
+      formal proceedings, so accepted work may be submitted to other venues.</p>
+
+  - id: "schedule"
+    title: "Workshop Schedule"
+    content: |
+      <p><em>Full schedule to be announced after paper notifications (September 2026).</em></p>
+      <ul>
+        <li><strong>Standard Track:</strong> 8–10 peer-reviewed paper presentations, 15–20 minutes each including Q&amp;A</li>
+        <li><strong>Invited Speaker(s):</strong> One or two 60-minute presentations from senior members of the ICAPS and game communities</li>
+        <li><strong>Industry Panel:</strong> 45-minute panel — <em>"The Reality Gap: Academic Planning vs. Shipping Titles"</em> — featuring designers and developers from game studios</li>
+      </ul>
+
+  - id: "organizers"
+    title: "Organising Committee"
+    type: "organizers"
+
+  - id: "committee"
+    title: "Program Committee"
+    type: "program_committee"

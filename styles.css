@@ -298,9 +298,8 @@ nav a:hover { color: #f5c842; }
 
 /* ── Content ── */
 main {
-    max-width: 820px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin: 2rem 0;
+    padding: 0;
 }
 
 section {
@@ -510,6 +509,209 @@ footer {
     border-top-color: #12123a;
 }
 
+/* ── University Logo Slots ── */
+#logo-row {
+    padding: 0 40px;
+    position: relative;
+}
+
+.university-logo-slot {
+    border: 2px dashed var(--border-mid);
+    background: rgba(61,43,140,.05);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.72rem;
+    color: var(--border-mid);
+    letter-spacing: 0.5px;
+    transition: border-color 0.2s;
+}
+
+.university-logo-slot img {
+    max-height: 64px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: grayscale(20%);
+}
+
+[data-theme="dark"] .university-logo-slot {
+    border-color: var(--border-mid);
+    background: rgba(255,255,255,.03);
+    color: var(--border-mid);
+}
+
+/* ── Important Dates Table ── */
+.dates-table {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-color: var(--border-dim);
+    margin-bottom: 0;
+}
+
+.dates-table td {
+    color: var(--text);
+    vertical-align: middle;
+    padding: 0.75rem 1rem;
+    border-color: var(--border-dim);
+}
+
+.dates-table td:first-child {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.dates-highlight-row td {
+    background: #fff8e8;
+    color: var(--gold);
+    font-weight: 700;
+    border-left: 4px solid var(--secondary);
+}
+
+[data-theme="dark"] .dates-table td {
+    color: var(--text);
+    border-color: var(--border-dim);
+}
+
+[data-theme="dark"] .dates-table td:first-child {
+    color: var(--gold);
+}
+
+[data-theme="dark"] .dates-highlight-row td {
+    background: #160800;
+    border-left-color: var(--secondary);
+    text-shadow: 0 0 8px rgba(245,166,35,.4);
+}
+
+/* ── Organizer Cards ── */
+.organizer-card {
+    border: 2px solid var(--border-dim) !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0 rgba(61,43,140,.08) !important;
+    background: var(--surface) !important;
+    position: relative;
+}
+
+.organizer-card::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px;
+    width: 10px; height: 10px;
+    border-top: 3px solid var(--secondary);
+    border-left: 3px solid var(--secondary);
+    z-index: 1;
+}
+
+.organizer-card::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; right: -2px;
+    width: 10px; height: 10px;
+    border-bottom: 3px solid var(--secondary);
+    border-right: 3px solid var(--secondary);
+}
+
+.organizer-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 1rem;
+    border: 3px solid var(--border-mid);
+    filter: grayscale(20%);
+}
+
+.organizer-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #6650b0);
+    color: #fff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border: 3px solid var(--border-mid);
+}
+
+.organizer-name {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.organizer-role {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.45rem;
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    line-height: 1.7;
+}
+
+.organizer-affil {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.82rem;
+    color: var(--border-mid);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+
+.organizer-bio {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.84rem;
+    color: var(--text);
+    text-align: left;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+[data-theme="dark"] .organizer-card {
+    border-color: var(--border-dim) !important;
+    box-shadow: 4px 4px 0 rgba(0,0,0,.4) !important;
+    background: var(--surface) !important;
+}
+
+[data-theme="dark"] .organizer-name  { color: var(--gold); }
+[data-theme="dark"] .organizer-affil { color: #606080; }
+[data-theme="dark"] .organizer-bio   { color: var(--text); }
+
+/* ── Program Committee Grid ── */
+.pc-member {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border-dim);
+    background: var(--surface);
+}
+
+.pc-name {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--primary);
+}
+
+.pc-affil {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.75rem;
+    color: var(--border-mid);
+    font-style: italic;
+}
+
+[data-theme="dark"] .pc-member { border-color: var(--border-dim); background: var(--surface); }
+[data-theme="dark"] .pc-name   { color: var(--gold); }
+[data-theme="dark"] .pc-affil  { color: #606080; }
+
+/* ── Bootstrap conflict fixes ── */
+/* Restore section position context so pixel corner ::before/::after work */
+#content-container section { position: relative; }
+
 /* ── Responsive: tablet ── */
 @media (max-width: 768px) {
     #workshop-banner { padding: 30px 16px 24px; }
@@ -530,6 +732,9 @@ footer {
 
     section { padding: 1.5rem; }
     section h2 { font-size: 1.15rem; }
+
+    .organizer-role { font-size: 0.4rem; }
+    .university-logo-slot { height: 64px; font-size: 0.65rem; }
 }
 
 /* ── Responsive: mobile ── */
@@ -580,4 +785,9 @@ footer {
     section { padding: 1.1rem; }
     section h2 { font-size: 1rem; }
     .deadline-highlight { font-size: 0.82rem; padding: 10px 12px; }
+
+    .organizer-avatar, .organizer-photo { width: 72px; height: 72px; font-size: 0.8rem; }
+    .organizer-role { font-size: 0.38rem; }
+    .pc-name { font-size: 0.8rem; }
+    #logo-row { padding: 0 12px; }
 }

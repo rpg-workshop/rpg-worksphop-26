@@ -44,9 +44,6 @@ function buildPage(config) {
     document.getElementById('year').innerText = new Date().getFullYear();
 
     document.getElementById('banner-title').innerText = config.title;
-    if (config.subtitle) {
-        document.getElementById('banner-subtitle').innerText = config.subtitle;
-    }
 
     const navbar = document.getElementById('navbar');
     const contentContainer = document.getElementById('content-container');
@@ -64,9 +61,79 @@ function buildPage(config) {
 
         const sectionDiv = document.createElement('section');
         sectionDiv.id = sec.id;
-        sectionDiv.innerHTML = `<h2>${sec.title}</h2><div>${sec.content}</div>`;
+
+        switch (sec.type) {
+            case 'important_dates':
+                sectionDiv.innerHTML =
+                    `<h2>${sec.title}</h2>` +
+                    renderImportantDates(config.important_dates);
+                break;
+            case 'organizers':
+                sectionDiv.innerHTML =
+                    `<h2>${sec.title}</h2>` +
+                    renderOrganizers(config.organizers);
+                break;
+            case 'program_committee':
+                sectionDiv.innerHTML =
+                    `<h2>${sec.title}</h2>` +
+                    renderProgramCommittee(config.program_committee);
+                break;
+            default:
+                sectionDiv.innerHTML = `<h2>${sec.title}</h2><div>${sec.content}</div>`;
+        }
+
         contentContainer.appendChild(sectionDiv);
     });
+}
+
+function renderImportantDates(dates) {
+    const rows = dates.map(d => {
+        const cls = d.highlight ? 'dates-highlight-row' : '';
+        return `<tr class="${cls}">
+                    <td>${d.label}</td>
+                    <td><strong>${d.date}</strong></td>
+                </tr>`;
+    }).join('');
+    return `<div class="table-responsive">
+                <table class="table dates-table">
+                    <tbody>${rows}</tbody>
+                </table>
+            </div>`;
+}
+
+function renderOrganizers(organizers) {
+    const cards = organizers.map(o => {
+        const initials = o.name.split(' ')
+            .filter((_, i, a) => i === 0 || i === a.length - 1)
+            .map(w => w[0]).join('');
+        const photoHtml = o.photo
+            ? `<img src="${o.photo}" alt="${o.name}" class="organizer-photo">`
+            : `<div class="organizer-avatar" aria-label="${o.name}">${initials}</div>`;
+        return `<div class="col-12 col-sm-6 col-lg-4">
+                    <div class="card organizer-card h-100">
+                        <div class="card-body text-center">
+                            ${photoHtml}
+                            <h5 class="organizer-name">${o.name}</h5>
+                            <p class="organizer-role">${o.role}</p>
+                            <p class="organizer-affil">${o.affiliation}</p>
+                            <p class="organizer-bio">${o.bio}</p>
+                        </div>
+                    </div>
+                </div>`;
+    }).join('');
+    return `<div class="row g-4">${cards}</div>`;
+}
+
+function renderProgramCommittee(members) {
+    const items = members.map(m =>
+        `<div class="col-12 col-sm-6 col-md-4">
+             <div class="pc-member">
+                 <span class="pc-name">${m.name}</span>
+                 <span class="pc-affil">${m.affiliation}</span>
+             </div>
+         </div>`
+    ).join('');
+    return `<div class="row g-2">${items}</div>`;
 }
 
 function initGame(config) {
