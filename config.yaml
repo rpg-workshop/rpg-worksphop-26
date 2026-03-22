@@ -1,44 +1,37 @@
 title: "RPG 26: Roles of Planning in Games"
-deadline: "August 1st, 2026"
+deadline: "April 20th, 2026"
 
 important_dates:
   - label: "Paper Submission Deadline"
-    date: "August 1st, 2026"
+    date: "April 20th, 2026"
     highlight: true
   - label: "Author Notification"
-    date: "September 1st, 2026"
-  - label: "Camera-Ready Deadline"
-    date: "September 15th, 2026"
+    date: "May 20th, 2026"
 
 organizers:
   - name: "Richard G. Freedman"
     affiliation: "SIFT"
     role: "Primary Contact"
-    bio: "AI planning researcher at Smart Information Flow Technologies (SIFT). Works on adaptive characters and pedagogical experience management in educational videogames promoting literacy and workforce training. Previously co-organized the User Interfaces for Scheduling and Planning (UISP) Workshop at ICAPS."
     photo: ""
   - name: "Emanuele De Pellegrin"
-    affiliation: "University of Edinburgh"
+    affiliation: "University of Edinburgh - Centre for AI in Assistive Autonomy"
     role: "Research Associate"
-    bio: "Research Associate at the Centre for AI in Assistive Autonomy, University of Edinburgh. Works on Assistive Driving and planning in shared autonomy systems that combine human intent with safe AI control. Creator of PDSim: Planning Domain Simulation, a Unity3D plugin to test plan execution or create game behaviours."
     photo: ""
   - name: "Lorenzo James"
     affiliation: "IÉSEG Business School"
     role: "Assistant Professor"
-    bio: "Assistant Professor of Information Systems at IÉSEG Business School. Research focuses on integrating persuasive design into entertainment-based games to promote sustained engagement with health behaviors. Developer of the Automated Planning of Level Structure system, which aids healthcare personnel in designing balanced, health-promoting digital interventions."
     photo: ""
   - name: "Pavan Kantharaju"
     affiliation: "SIFT"
     role: "Researcher"
-    bio: "Researcher at SIFT specialising in neural and symbolic representation learning and its application to planning, plan and goal recognition, and computer games. Developed a game-playing agent for the RTS game μRTS using adversarial hierarchical planning, which competed in the 2018 IEEE Computational Intelligence in Games competition."
     photo: ""
   - name: "Myriam Kapon"
     affiliation: "University of Macedonia"
     role: "Master's Student"
-    bio: "Master's student in Artificial Intelligence and Data Analytics at the University of Macedonia. Research focuses on bridging classical AI planning and game development; currently implementing a GOAP framework with lifted actions in Unity3D. Also works as an educator in game development for young learners."
     photo: ""
 
 program_committee:
-  - { name: "Jhon Doe",             affiliation: "University of Smth" }
+  - { name: "TBA",             affiliation: "" }
   
 
 game:
@@ -96,16 +89,9 @@ sections:
   - id: "cfp"
     title: "Call for Papers"
     content: |
-      <p>We invite submissions on all aspects of Automated Planning and Scheduling (APS) as applied
-      to games — including video games, tabletop games, serious games, and game-inspired benchmarks.
-      We welcome both theoretical contributions and applied systems.</p>
-      <p>The workshop will feature a <strong>Standard Track</strong> of peer-reviewed technical papers
-      (short and long) with 8–10 presentations, one or two <strong>Invited Speaker</strong> sessions
-      (60 minutes each), and an <strong>Industry Panel</strong> on the "Reality Gap" between academic
-      planning and shipping commercial titles.</p>
-      <p>We utilize a <strong>double-blind review process</strong> to minimize bias regarding author
-      identity or affiliation. Our organizing committee includes people from the U.S., U.K., France,
-      and Greece with a mix of academic researchers and industry practitioners.</p>
+      <p>TODO</p>
+      <p>CONTENT</p>
+      
 
   - id: "topics"
     title: "Topics of Interest"
@@ -138,7 +124,6 @@ sections:
         <li>Regular papers: up to <strong>8 pages</strong> + unlimited references</li>
         <li>Short / position papers: up to <strong>4 pages</strong> + unlimited references</li>
         <li>All submissions must be in <strong>PDF format</strong></li>
-        <li>Reviewing is <strong>double-blind</strong> — please anonymize your submission</li>
       </ul>
       <p>At least one author of each accepted paper must register for the ICAPS 2026 workshop day.
       Accepted papers will be made available on the workshop website. The workshop does not publish
@@ -147,12 +132,7 @@ sections:
   - id: "schedule"
     title: "Workshop Schedule"
     content: |
-      <p><em>Full schedule to be announced after paper notifications (September 2026).</em></p>
-      <ul>
-        <li><strong>Standard Track:</strong> 8–10 peer-reviewed paper presentations, 15–20 minutes each including Q&amp;A</li>
-        <li><strong>Invited Speaker(s):</strong> One or two 60-minute presentations from senior members of the ICAPS and game communities</li>
-        <li><strong>Industry Panel:</strong> 45-minute panel — <em>"The Reality Gap: Academic Planning vs. Shipping Titles"</em> — featuring designers and developers from game studios</li>
-      </ul>
+      <p><em>Full schedule to be announced after paper notifications (May 2026).</em></p>
 
   - id: "organizers"
     title: "Organising Committee"

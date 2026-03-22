@@ -5,25 +5,6 @@ let isPlayerTurn = true;
 let gameOver = false;
 let deadline = "";
 
-// ── Theme toggle ──
-function initTheme() {
-    const saved = localStorage.getItem('rpg-theme');
-    if (saved === 'dark') applyTheme('dark');
-}
-
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    const btn = document.getElementById('theme-toggle');
-    if (btn) btn.textContent = theme === 'dark' ? '☀ LIGHT' : '🌙 DARK';
-}
-
-function toggleTheme() {
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    localStorage.setItem('rpg-theme', next);
-}
-
 // ── Config loading ──
 async function loadConfig() {
     try {
@@ -116,7 +97,6 @@ function renderOrganizers(organizers) {
                             <h5 class="organizer-name">${o.name}</h5>
                             <p class="organizer-role">${o.role}</p>
                             <p class="organizer-affil">${o.affiliation}</p>
-                            <p class="organizer-bio">${o.bio}</p>
                         </div>
                     </div>
                 </div>`;
@@ -250,5 +230,4 @@ function loseGame() {
     setDialogue(`DESK REJECT! Refresh the page to write a new manuscript...`);
 }
 
-initTheme();
 loadConfig();

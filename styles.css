@@ -385,129 +385,6 @@ footer {
 
 .shake { animation: shake 0.5s; }
 
-/* ── Theme toggle button ── */
-#theme-toggle {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    color: #d0c8ff;
-    border: 1px solid #5548a0;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.4rem;
-    padding: 5px 8px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: .15s;
-}
-
-#theme-toggle:hover {
-    border-color: #f5c842;
-    color: #f5c842;
-}
-
-/* ── Dark theme overrides ── */
-[data-theme="dark"] {
-    --primary: #1a1a2e;
-    --secondary: #e94560;
-    --gold: #f5a623;
-    --bg: #0d0d1a;
-    --text: #c0c8e0;
-    --surface: #10102a;
-    --border-dim: #2a2a4a;
-    --border-mid: #4a4a8a;
-    --rpg-ui-bg: #06060f;
-    --rpg-ui-border: #4a4a8a;
-    --rpg-ui-text: #e0e8ff;
-}
-
-[data-theme="dark"] #workshop-banner {
-    background: linear-gradient(135deg, #06060f 0%, #12122e 50%, #06060f 100%);
-    border-bottom-color: var(--secondary);
-}
-
-[data-theme="dark"] #workshop-banner::before {
-    background-image:
-        radial-gradient(1px 1px at  8% 18%, #fff, transparent),
-        radial-gradient(1px 1px at 22% 65%, #fff, transparent),
-        radial-gradient(1px 1px at 38%  8%, #fff, transparent),
-        radial-gradient(1px 1px at 53% 50%, #fff, transparent),
-        radial-gradient(1px 1px at 67% 30%, #fff, transparent),
-        radial-gradient(1px 1px at 80% 72%, #fff, transparent),
-        radial-gradient(1px 1px at 91% 15%, #fff, transparent),
-        radial-gradient(2px 2px at 15% 42%, rgba(255,220,130,.8), transparent),
-        radial-gradient(2px 2px at 72% 10%, rgba(255,220,130,.7), transparent),
-        radial-gradient(1px 1px at 46% 85%, #fff, transparent);
-    background-size: auto;
-    opacity: 0.55;
-}
-
-[data-theme="dark"] .banner-title {
-    color: var(--gold);
-    text-shadow: 0 0 10px rgba(245,166,35,.9), 0 0 30px rgba(245,166,35,.4), 3px 3px 0 rgba(0,0,0,.8);
-    animation: titleGlow 3s ease-in-out infinite;
-}
-
-@keyframes titleGlow {
-    0%, 100% { text-shadow: 0 0 10px rgba(245,166,35,.9), 0 0 30px rgba(245,166,35,.4), 3px 3px 0 rgba(0,0,0,.8); }
-    50%       { text-shadow: 0 0 20px rgba(245,166,35,1), 0 0 60px rgba(245,166,35,.7), 3px 3px 0 rgba(0,0,0,.8); }
-}
-
-[data-theme="dark"] .banner-subtitle { color: #90b8ff; }
-[data-theme="dark"] .banner-eyebrow  { color: var(--secondary); }
-
-[data-theme="dark"] #battle-scene {
-    background: linear-gradient(to bottom,
-        #0e0520 0%, #221040 30%, #3d1a5c 55%,
-        #5a2870 65%, #2e1a0e 65%, #1a0c06 82%, #0a0500 100%
-    );
-}
-
-[data-theme="dark"] #battle-scene::before {
-    background-image:
-        radial-gradient(1px 1px at  4% 12%, #fff, transparent),
-        radial-gradient(1px 1px at 18% 28%, #fff, transparent),
-        radial-gradient(1px 1px at 28%  5%, #fff, transparent),
-        radial-gradient(1px 1px at 42% 38%, #fff, transparent),
-        radial-gradient(1px 1px at 56% 18%, #fff, transparent),
-        radial-gradient(1px 1px at 79%  7%, #fff, transparent),
-        radial-gradient(2px 2px at 35% 42%, rgba(255,220,120,.9), transparent),
-        radial-gradient(2px 2px at 73% 14%, rgba(255,220,120,.7), transparent);
-    inset: 0 0 38% 0;
-}
-
-[data-theme="dark"] .hud {
-    background: rgba(6,6,20,.92);
-    border-color: var(--border-mid);
-    box-shadow: 4px 4px 0 rgba(0,0,0,.6);
-}
-
-[data-theme="dark"] .hud h3    { color: #fff; }
-[data-theme="dark"] .hp-bar-bg { background: #0e0e20; }
-
-[data-theme="dark"] nav { background: #06060f; }
-[data-theme="dark"] nav a { color: #90b8ff; }
-
-[data-theme="dark"] section { box-shadow: 4px 4px 0 rgba(0,0,0,.4); }
-[data-theme="dark"] section h2 {
-    color: var(--gold);
-    text-shadow: 0 0 10px rgba(245,166,35,.35);
-}
-[data-theme="dark"] section strong { color: #e0e8ff; }
-[data-theme="dark"] section a      { color: #6ab0ff; }
-
-[data-theme="dark"] .deadline-highlight {
-    background: #160800;
-    border-color: #4a2000;
-    text-shadow: 0 0 8px rgba(245,166,35,.4);
-}
-
-[data-theme="dark"] footer {
-    background: #04040c;
-    color: #3a3a5a;
-    border-top-color: #12123a;
-}
 
 /* ── University Logo Slots ── */
 #logo-row {
@@ -516,7 +393,7 @@ footer {
 }
 
 .university-logo-slot {
-    border: 2px dashed var(--border-mid);
+    border: 2px none var(--border-mid);
     background: rgba(61,43,140,.05);
     height: 80px;
     display: flex;
@@ -536,11 +413,6 @@ footer {
     filter: grayscale(20%);
 }
 
-[data-theme="dark"] .university-logo-slot {
-    border-color: var(--border-mid);
-    background: rgba(255,255,255,.03);
-    color: var(--border-mid);
-}
 
 /* ── Important Dates Table ── */
 .dates-table {
@@ -568,20 +440,6 @@ footer {
     border-left: 4px solid var(--secondary);
 }
 
-[data-theme="dark"] .dates-table td {
-    color: var(--text);
-    border-color: var(--border-dim);
-}
-
-[data-theme="dark"] .dates-table td:first-child {
-    color: var(--gold);
-}
-
-[data-theme="dark"] .dates-highlight-row td {
-    background: #160800;
-    border-left-color: var(--secondary);
-    text-shadow: 0 0 8px rgba(245,166,35,.4);
-}
 
 /* ── Organizer Cards ── */
 .organizer-card {
@@ -671,15 +529,6 @@ footer {
     margin-bottom: 0;
 }
 
-[data-theme="dark"] .organizer-card {
-    border-color: var(--border-dim) !important;
-    box-shadow: 4px 4px 0 rgba(0,0,0,.4) !important;
-    background: var(--surface) !important;
-}
-
-[data-theme="dark"] .organizer-name  { color: var(--gold); }
-[data-theme="dark"] .organizer-affil { color: #606080; }
-[data-theme="dark"] .organizer-bio   { color: var(--text); }
 
 /* ── Program Committee Grid ── */
 .pc-member {
@@ -704,9 +553,6 @@ footer {
     font-style: italic;
 }
 
-[data-theme="dark"] .pc-member { border-color: var(--border-dim); background: var(--surface); }
-[data-theme="dark"] .pc-name   { color: var(--gold); }
-[data-theme="dark"] .pc-affil  { color: #606080; }
 
 /* ── Bootstrap conflict fixes ── */
 /* Restore section position context so pixel corner ::before/::after work */
