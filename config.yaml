@@ -1,12 +1,13 @@
 title: "RPG 26: Roles of Planning in Games"
-deadline: "April 20th, 2026"
+#deadline: "April 20th, 2026"
+deadline: "TBA"
 
 important_dates:
   - label: "Paper Submission Deadline"
-    date: "April 20th, 2026"
+    date: "TBA"
     highlight: true
   - label: "Author Notification"
-    date: "May 20th, 2026"
+    date: "TBA"
 
 organizers:
   - name: "Richard G. Freedman"
@@ -137,7 +138,7 @@ sections:
   - id: "schedule"
     title: "Workshop Schedule"
     content: |
-      <p><em>Full schedule to be announced after paper notifications (May 2026).</em></p>
+      <p><em>Full schedule to be announced after paper notifications (TBA).</em></p>
 
   - id: "organizers"
     title: "Organising Committee"
