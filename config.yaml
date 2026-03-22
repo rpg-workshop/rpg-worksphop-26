@@ -89,9 +89,15 @@ sections:
   - id: "cfp"
     title: "Call for Papers"
     content: |
-      <p>TODO</p>
-      <p>CONTENT</p>
-      
+      <p>In this workshop, we invite submissions of original research papers, position papers, and case studies 
+      on the application of APS in games. We welcome contributions addressing theoretical advances, practical 
+      implementations, and empirical evaluations of planning methods across a range of gaming contexts, 
+      including video games, tabletop games, and interactive narratives. Relevant topics include, but are 
+      not limited to, procedural content generation, automated level design, narrative generation, non-player-character 
+      interactions, and decision-making systems. </p><p>Submissions focusing on the development, adaptation, 
+      and application of APS techniques in games are particularly encouraged. Interdisciplinary work connecting 
+      AI planning research and game development is welcome, especially where planning methods are applied or 
+      explored in practical game settings.</p>
 
   - id: "topics"
     title: "Topics of Interest"
