@@ -1,13 +1,15 @@
 title: "RPG 26: Roles of Planning in Games"
 #deadline: "April 20th, 2026"
-deadline: "TBA"
+deadline: "May 4th, 2026"
 
 important_dates:
   - label: "Paper Submission Deadline"
-    date: "TBA"
+    date: "May 4th, 2026"
     highlight: true
   - label: "Author Notification"
-    date: "TBA"
+    date: "June 11th, 2026"
+  - label: "Workshop Date"
+    date: "June 28th-29th, 2026"
 
 organizers:
   - name: "Richard G. Freedman"
@@ -126,7 +128,8 @@ sections:
   - id: "submission"
     title: "Submission Instructions"
     content: |
-      <p>Submit papers via <strong>EasyChair</strong> using the <strong>ICAPS 2026 paper template</strong>.</p>
+      <p>Submit papers via <strong><a href="https://easychair.org/my2/conference?conf=rpg26">EasyChair</a></strong> using the <strong><a href="https://aaai.org/authorkit26-1/">ICAPS 2026 paper template</a></strong>.</p>
+      <p>Please send questions to <a href="mailto:rpg26@easychair.org">rpg26@easychair.org</a></p>
       <ul>
         <li>Regular papers: up to <strong>8 pages</strong> + unlimited references</li>
         <li>Short / position papers: up to <strong>4 pages</strong> + unlimited references</li>
@@ -138,7 +141,7 @@ sections:
   - id: "schedule"
     title: "Workshop Schedule"
     content: |
-      <p><em>Full schedule to be announced after paper notifications (TBA).</em></p>
+      <p><em>Full schedule to be announced after paper notifications (June 2026).</em></p>
 
   - id: "organizers"
     title: "Organising Committee"
