@@ -123,6 +123,8 @@ sections:
         game content such as solvable levels, puzzles, and narratives.</li>
         <li><strong>Planning for Game Design:</strong> Applications of APS to game or level design
         for videogames and/or tabletop games.</li>
+        <li><strong>Representing Games as Planning Problems:</strong> Modeling game domains for (semi-)automated problem solving systems.</li>
+        <li><strong>Tools for Planning in Games:</strong> Software or libraries using games that make use of planning.</li>
       </ul>
 
   - id: "submission"
