@@ -130,7 +130,7 @@ sections:
   - id: "submission"
     title: "Submission Instructions"
     content: |
-      <p>Submit papers via <strong><a href="https://easychair.org/my2/conference?conf=rpg26">EasyChair</a></strong> using the <strong><a href="https://aaai.org/authorkit26-1/">ICAPS 2026 paper template</a></strong>.</p>
+      <p>Submit papers via <strong><a href="https://easychair.org/my/conference?conf=rpg26">EasyChair</a></strong> using the <strong><a href="https://aaai.org/authorkit26-1/">ICAPS 2026 paper template</a></strong>.</p>
       <p>Please send questions to <a href="mailto:rpg26@easychair.org">rpg26@easychair.org</a></p>
       <ul>
         <li>Regular papers: up to <strong>8 pages</strong> + unlimited references</li>
