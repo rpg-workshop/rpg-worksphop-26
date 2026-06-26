@@ -31,7 +31,7 @@ function buildPage(config) {
 
     const deadlineDiv = document.createElement('div');
     deadlineDiv.className = 'deadline-highlight';
-    deadlineDiv.innerText = `🚨 Call for Papers Deadline: ${config.deadline}`;
+    deadlineDiv.innerText = `📅 ${config.deadline}`;
     contentContainer.appendChild(deadlineDiv);
 
     config.sections.forEach(sec => {
@@ -90,11 +90,14 @@ function renderOrganizers(organizers) {
         const photoHtml = o.photo
             ? `<img src="${o.photo}" alt="${o.name}" class="organizer-photo">`
             : `<div class="organizer-avatar" aria-label="${o.name}">${initials}</div>`;
+        const nameHtml = o.url
+            ? `<a href="${o.url}" target="_blank" rel="noopener">${o.name}</a>`
+            : o.name;
         return `<div class="col-12 col-sm-6 col-lg-4">
                     <div class="card organizer-card h-100">
                         <div class="card-body text-center">
                             ${photoHtml}
-                            <h5 class="organizer-name">${o.name}</h5>
+                            <h5 class="organizer-name">${nameHtml}</h5>
                             <p class="organizer-role">${o.role}</p>
                             <p class="organizer-affil">${o.affiliation}</p>
                         </div>

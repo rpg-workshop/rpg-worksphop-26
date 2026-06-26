@@ -1,41 +1,50 @@
 title: "RPG 26: Roles of Planning in Games"
 
-deadline: "Extended! May 11th, 2026"
+deadline: "Workshop: June 28, 2026 — 14:30 to 18:00 IST, Dublin"
 
 important_dates:
   - label: "Paper Submission Deadline"
     date: "May 11th, 2026"
-    highlight: true
   - label: "Author Notification"
     date: "June 11th, 2026"
   - label: "Workshop Date"
-    date: "June 28th-29th, 2026"
+    date: "June 28th, 2026 (14:30 – 18:00 IST)"
+    highlight: true
 
 organizers:
   - name: "Richard G. Freedman"
     affiliation: "SIFT"
     role: "Primary Contact"
     photo: ""
+    url: "https://www.yetanotherfreedman.com"
   - name: "Emanuele De Pellegrin"
     affiliation: "University of Edinburgh - Centre for AI in Assistive Autonomy"
     role: "Research Associate"
     photo: ""
-  - name: "Lorenzo James"
-    affiliation: "IÉSEG School of Management"
+    url: "https://cryoscopic-e.github.io"
+  - name: "Lorenzo J. James"
+    affiliation: "IESEG School of Management"
     role: "Assistant Professor"
     photo: ""
+    url: "https://www.researchgate.net/profile/Lorenzo-James-2"
   - name: "Pavan Kantharaju"
     affiliation: "SIFT"
     role: "Researcher"
     photo: ""
+    url: "https://www.pavankantharaju.com"
   - name: "Myriam Kapon"
     affiliation: "University of Macedonia"
     role: "Master's Student"
     photo: ""
+    url: "https://linktr.ee/myriam_kapon"
 
 program_committee:
-  - { name: "TBA",             affiliation: "" }
-  
+  - { name: "Lucas Bergholz",    affiliation: "University of Brasilia" }
+  - { name: "Andy Edmondson",    affiliation: "Heriot-Watt University" }
+  - { name: "Todd Neller",       affiliation: "Gettysburg College" }
+  - { name: "Ron Petrick",       affiliation: "Heriot-Watt University" }
+  - { name: "Ioannis Refanidis", affiliation: "University of Macedonia" }
+  - { name: "Bruno César Ribas", affiliation: "University of Brasilia" }
 
 game:
   hero_name: "Researcher"
@@ -89,18 +98,99 @@ sections:
     title: "Important Dates"
     type: "important_dates"
 
-  - id: "cfp"
-    title: "Call for Papers"
+  - id: "schedule"
+    title: "Workshop Schedule"
     content: |
-      <p>In this workshop, we invite submissions of original research papers, position papers, and case studies 
-      on the application of APS in games. We welcome contributions addressing theoretical advances, practical 
-      implementations, and empirical evaluations of planning methods across a range of gaming contexts, 
-      including video games, tabletop games, and interactive narratives. Relevant topics include, but are 
-      not limited to, procedural content generation, automated level design, narrative generation, non-player-character 
-      interactions, and decision-making systems. </p><p>Submissions focusing on the development, adaptation, 
-      and application of APS techniques in games are particularly encouraged. Interdisciplinary work connecting 
-      AI planning research and game development is welcome, especially where planning methods are applied or 
-      explored in practical game settings.</p>
+      <p><strong>June 28, 2026 — 14:30 to 18:00 IST, Dublin, Ireland</strong></p>
+      <div class="table-responsive">
+        <table class="table table-bordered schedule-table">
+          <tbody>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">14:30 – 14:35</td>
+              <td>Welcome</td>
+            </tr>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">14:35 – 15:20</td>
+              <td><strong>Invited Talk:</strong> Rogelio Cardona-Rivera — <em>Planning for the Design of Experiences</em></td>
+            </tr>
+            <tr class="table-secondary">
+              <td colspan="2"><em>Paper Presentations — Theme: Planning-based Tools for Games</em></td>
+            </tr>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">15:20 – 15:40</td>
+              <td><em>From Domain to Action: A Cohesive Planning Pipeline for Game AI in Unity Engine</em> — Marek Marchlewicz</td>
+            </tr>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">15:40 – 16:00</td>
+              <td><em>Dynamic Scene Reconstruction for Prototyping Planning-Based Game Environments</em> — Albaraa Othman, Emanuele De Pellegrin, and Ron Petrick</td>
+            </tr>
+            <tr class="table-warning">
+              <td style="white-space:nowrap; font-weight:bold;">16:00 – 16:20</td>
+              <td>☕ Coffee Break</td>
+            </tr>
+            <tr class="table-secondary">
+              <td colspan="2"><em>Paper Presentations — Theme: Applications of Games for Planning</em></td>
+            </tr>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">16:20 – 16:35</td>
+              <td><em>Baba Is Axioms: A Challenging Benchmark for Classical Planning with Axioms</em> — Ronny Rochwerg, Allix Fletcher, Samantha Papais, Cynthia Wang, Connor Little, Ting Hu, and Christian Muise</td>
+            </tr>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">16:35 – 16:50</td>
+              <td><em>A Good Snowman Is (also Numerically) Hard to Plan</em> — Matteo Paparo, Francesco Doria, Marco Maratea, and Mauro Vallati</td>
+            </tr>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">16:50 – 17:10</td>
+              <td><em>Active Information Gathering in Social Deduction Game</em> — Haochong Luo, Chenyuan Zhang, and Guang Hu</td>
+            </tr>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">17:10 – 17:55</td>
+              <td><strong>Invited Talk:</strong> Jeff Orkin — <em>Planning in Games in the Age of LLMs</em></td>
+            </tr>
+            <tr>
+              <td style="white-space:nowrap; font-weight:bold;">17:55 – 18:00</td>
+              <td>Closing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+  - id: "keynotes"
+    title: "Keynote Speakers"
+    content: |
+      <h3>Rogelio Cardona-Rivera (University of Utah)</h3>
+      <p><strong>Talk Title:</strong> Planning for the Design of Experiences</p>
+      <p><strong>Abstract:</strong> Automated planning has long been viewed as a problem-solving paradigm for generating sequences of actions that achieve specified goals. In the context of games, however, its role can be far richer: beyond decision-making, it can serve as a representational, organizational, and interactional framework. In this talk, I will offer a reflective view on my prior work for planning the design of playful experiences and chart potential futures centered on the idea of planning as foundational to shaping how games are designed, experienced, and understood.</p>
+      <div style="display: block; overflow: hidden; margin-top: 15px; margin-bottom: 30px;">
+        <img src="https://i.ibb.co/mr2sGmn6/Rogelio-headshot-left-500pxsq.jpg" alt="Dr. Rogelio E. Cardona-Rivera" style="float: left; width: 160px; margin-right: 20px; border-radius: 4px; margin-bottom: 10px;" />
+        <div style="overflow: hidden;">
+          <p style="margin: 0;"><strong>Bio:</strong> Dr. Rogelio E. Cardona-Rivera is a Puerto Rican computational game design scientist. Rogelio co-founded the Division of Games at the University of Utah, where they serve as an Assistant Professor (with courtesy appointments in Computer Science and Psychology). Prior to joining the faculty at Utah, Dr. Cardona-Rivera was a research scientist at Sandia National Laboratories and Disney Research.
+          At Utah, Rogelio directs the Laboratory for Quantitative Experience Design, a community of scholars who build plan-based models of storygames and investigate their relation to player psychology and experience. Prof. Cardona-Rivera obtained the BS degree in Computer Engineering from the University of Puerto Rico at Mayaguez and the PhD degree in Computer Science from North Carolina State University in the United States. Rogelio has authored over 30 articles and books and has obtained nearly 1.5 million (USD) in support for their research projects toward establishing a science of game design, including CAREER and collaborative grants from the U.S. National Science Foundation, sponsorships from the games industry via Oculus VR and Activision Blizzard, and grants from the Department of Energy, IARPA, and the US Naval Research Laboratory.</p>
+        </div>
+      </div>
+      <hr>
+      <h3>Jeff Orkin (Bitpart AI)</h3>
+      <p><strong>Talk Title:</strong> Planning in Games in the Age of LLMs</p>
+      <p><strong>Abstract:</strong> Bitpart is building a multi-agent, multi-modal hierarchical planning system for games, to puppeteer groups of NPCs in living worlds, and narrative experiences. This talk will explore our approach, discuss technical design decisions we've made, and challenges we've faced implementing a powerful planner. In the process, we will consider how LLMs and planners can work together, to balance the pros and cons of each, and achieve the best of both worlds.</p>
+      <div style="display: block; overflow: hidden; margin-top: 15px;">
+        <img src="https://i.ibb.co/jvXnzTLM/1781892603792.jpg" alt="Dr. Jeff Orkin" style="float: left; width: 160px; margin-right: 20px; border-radius: 4px; margin-bottom: 10px;" />
+        <div style="overflow: hidden;">
+          <p style="margin: 0;"><strong>Bio:</strong> Dr. Jeff Orkin is an AI researcher, entrepreneur, and game industry veteran. He is the Co-founder and CEO of Bitpart AI, a startup focused on building advanced NPC systems that combine Large Language Models (LLMs) with automated planning to enable more dynamic and believable game worlds. Prior to Bitpart AI, he founded Giant Otter Technologies, a conversational AI company that emerged from his PhD research at the MIT Media Lab, where he worked on learning character behavior from human gameplay data.
+          Jeff spent over a decade in the game industry as an AI specialist at Sierra and Monolith Productions, contributing to landmark titles such as No One Lives Forever 2 and F.E.A.R., the latter of which is widely recognized for pioneering the use of Goal-Oriented Action Planning (GOAP) in commercial games. His work has been influential in shaping modern game AI systems that balance planning, behavior trees, and emergent agent behavior.
+          He has co-authored volumes in the AI Game Programming Wisdom series, served as Associate Editor for the IEEE Transactions on Computational Intelligence and AI in Games, and has presented at major conferences including GDC, AIIDE, IEEE CIG, AAAI, AAMAS, ICAPS, and SARA. He holds a Master's degree in Computer Science from the University of Washington and a Bachelor's degree in Computer Science from Tufts University, with a minor in Studio Art.</p>
+        </div>
+      </div>
+
+  - id: "papers"
+    title: "Accepted Papers"
+    content: |
+      <ul>
+        <li><a href="papers/paper1.pdf"><strong>A Good Snowman Is (also Numerically) Hard to Plan</strong></a>, Matteo Paparo, Francesco Doria, Marco Maratea and Mauro Vallati</li>
+        <li><a href="papers/paper2.pdf"><strong>Active Information Gathering in Social Deduction Game</strong></a>, Haochong Luo, Chenyuan Zhang and Guang Hu</li>
+        <li><a href="papers/paper3.pdf"><strong>From Domain to Action: A Cohesive Planning Pipeline for Game AI in Unity Engine</strong></a>, Marek Marchlewicz</li>
+        <li><a href="papers/paper4.pdf"><strong>Baba Is Axioms: A Challenging Benchmark for Classical Planning with Axioms</strong></a>, Ronny Rochwerg, Allix Fletcher, Samantha Papais, Cynthia Wang, Connor Little, Ting Hu and Christian Muise</li>
+        <li><a href="papers/paper5.pdf"><strong>Dynamic Scene Reconstruction for Prototyping Planning-Based Game Environments</strong>, Albaraa Othman, Emanuele De Pellegrin and Ron Petrick</li>
+      </ul>
 
   - id: "topics"
     title: "Topics of Interest"
@@ -139,11 +229,6 @@ sections:
       </ul>
       <p>At least one author of each accepted paper must register for the ICAPS 2026 workshop day.
       Accepted papers will be made available on the workshop website.</p>
-
-  - id: "schedule"
-    title: "Workshop Schedule"
-    content: |
-      <p><em>Full schedule to be announced after paper notifications (June 2026).</em></p>
 
   - id: "organizers"
     title: "Organising Committee"
